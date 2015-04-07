@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMCalculator", "MVVMCalculator\MVVMCalculator.csproj", "{68057D6C-D164-4554-8347-3DC473500F32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMCalculatorTest", "MVVMCalculatorTest\MVVMCalculatorTest.csproj", "{6F8C723A-21AA-48AC-BF46-D246478F262D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{68057D6C-D164-4554-8347-3DC473500F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68057D6C-D164-4554-8347-3DC473500F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68057D6C-D164-4554-8347-3DC473500F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8C723A-21AA-48AC-BF46-D246478F262D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8C723A-21AA-48AC-BF46-D246478F262D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8C723A-21AA-48AC-BF46-D246478F262D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8C723A-21AA-48AC-BF46-D246478F262D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
