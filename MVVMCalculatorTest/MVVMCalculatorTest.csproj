@@ -47,7 +47,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Model\CalculatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +55,9 @@
       <Project>{68057d6c-d164-4554-8347-3dc473500f32}</Project>
       <Name>MVVMCalculator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
