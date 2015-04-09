@@ -16,7 +16,7 @@ namespace MVVMCalculator.Model
 
         public double Calculate()
         {
-            Calculator calc = new Calculator();
+            Calculator calc = Calculator.Instance;
             return calc.Execute(Left, Right, CalculateType);
         }
     }

@@ -9,6 +9,7 @@ namespace MVVMCalculator.Model
     public class Calculator
     {
         #region enum Type
+
         public enum Type
         {
             None,
@@ -17,7 +18,20 @@ namespace MVVMCalculator.Model
             Mul,
             Div
         }
+
         #endregion
+
+        #region Singleton
+
+        private static Calculator instance = new Calculator();
+        public static Calculator Instance
+        {
+            get { return instance; }
+        }
+
+        #endregion
+
+        private Calculator() {}
 
         public double Execute(double left, double right, Type type)
         {

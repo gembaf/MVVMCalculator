@@ -12,7 +12,7 @@ namespace MVVMCalculatorTest.Model
         [TestCase(4, 0, Result = 0)]
         public double ExecuteTest割り算(double left, double right)
         {
-            Calculator calc = new Calculator();
+            Calculator calc = Calculator.Instance;
             return calc.Execute(left, right, Calculator.Type.Div);
         }
     }
