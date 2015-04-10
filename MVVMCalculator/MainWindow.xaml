@@ -9,7 +9,7 @@
         mc:Ignorable="d ignore"
         Height="430"
         Width="600"
-        Title="MVVM Light Application"
+        Title="MVVMCalculator"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     
     <Window.Resources>
