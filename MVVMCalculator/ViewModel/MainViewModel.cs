@@ -11,62 +11,51 @@ namespace MVVMCalculator.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private readonly IDataService _dataService;
+        #region プロパティ
 
-        /// <summary>
-        /// The <see cref="WelcomeTitle" /> property's name.
-        /// </summary>
-        public const string WelcomeTitlePropertyName = "WelcomeTitle";
+        #region CurrentPage
 
-        private string _welcomeTitle = string.Empty;
-
-        /// <summary>
-        /// Gets the WelcomeTitle property.
-        /// Changes to that property's value raise the PropertyChanged event. 
-        /// </summary>
-        public string WelcomeTitle
+        private ViewModelBase _CurrentPage;
+        public ViewModelBase CurrentPage
         {
-            get
-            {
-                return _welcomeTitle;
-            }
-
+            get { return this._CurrentPage; }
             set
             {
-                if (_welcomeTitle == value)
+                if (this._CurrentPage != value)
                 {
-                    return;
+                    this._CurrentPage = value;
+                    RaisePropertyChanged("CurrentPage");
                 }
-
-                _welcomeTitle = value;
-                RaisePropertyChanged(WelcomeTitlePropertyName);
             }
         }
 
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
-        public MainViewModel(IDataService dataService)
-        {
-            _dataService = dataService;
-            _dataService.GetData(
-                (item, error) =>
-                {
-                    if (error != null)
-                    {
-                        // Report error here
-                        return;
-                    }
+        #endregion
 
-                    WelcomeTitle = item.Title;
-                });
+        #region CalculatorPage
+
+        private CalculatorViewModel _CalculatorPage;
+        public CalculatorViewModel CalculatorPage
+        {
+            get { return this._CalculatorPage; }
+            set
+            {
+                if (this._CalculatorPage != value)
+                {
+                    this._CalculatorPage = value;
+                    RaisePropertyChanged("CalculatorPage");
+                }
+            }
         }
 
-        ////public override void Cleanup()
-        ////{
-        ////    // Clean up if needed
+        #endregion
 
-        ////    base.Cleanup();
-        ////}
+        #endregion
+
+        public MainViewModel()
+        {
+            CalculatorPage = new CalculatorViewModel();
+            CurrentPage = CalculatorPage;
+        }
+
     }
 }

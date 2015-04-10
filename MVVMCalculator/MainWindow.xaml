@@ -4,29 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
+        xmlns:localvm="clr-namespace:MVVMCalculator.ViewModel"
+        xmlns:localview="clr-namespace:MVVMCalculator.View"
         mc:Ignorable="d ignore"
-        Height="300"
-        Width="300"
+        Height="430"
+        Width="600"
         Title="MVVM Light Application"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Skins/MainSkin.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <DataTemplate DataType="{x:Type localvm:CalculatorViewModel}">
+            <localview:CalculatorPage />
+        </DataTemplate>
     </Window.Resources>
 
-    <Grid x:Name="LayoutRoot">
+    <Grid>
 
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="400" />
+        </Grid.ColumnDefinitions>
 
+        <ContentControl Content="{Binding CurrentPage}"
+                        Grid.Column="1"/>
     </Grid>
 </Window>
