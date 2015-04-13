@@ -126,7 +126,7 @@ namespace MVVMCalculator.ViewModel
 
         private void Calculate()
         {
-            Result = Calculator.Instance.Execute(Left, Right, Calculator.Type.Add);
+            Result = Calculator.Instance.Execute(this.Left, this.Right, this.SelectedCalculateType.CalculateType);
         }
     }
 }
