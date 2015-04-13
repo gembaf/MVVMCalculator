@@ -13,6 +13,15 @@ namespace MVVMCalculator.ViewModel
     /// </summary>
     public class CalculateTypeViewModel : ViewModelBase
     {
+        private static Dictionary<Calculator.Type, string> calculateTypeName = new Dictionary<Calculator.Type, string>
+        {
+            {Calculator.Type.None, "未選択"},
+            {Calculator.Type.Add, "足し算"},
+            {Calculator.Type.Sub, "引き算"},
+            {Calculator.Type.Mul, "掛け算"},
+            {Calculator.Type.Div, "割り算"}
+        };
+
         public Calculator.Type CalculateType { get; private set; }
 
         public string Label { get; private set; }
@@ -28,7 +37,7 @@ namespace MVVMCalculator.ViewModel
 
         public static CalculateTypeViewModel Create(Calculator.Type type)
         {
-            return new CalculateTypeViewModel(type, type.ToString());
+            return new CalculateTypeViewModel(type, calculateTypeName[type]);
         }
 
         public static IEnumerable<CalculateTypeViewModel> Create()
