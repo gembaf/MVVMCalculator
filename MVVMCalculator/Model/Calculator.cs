@@ -21,7 +21,7 @@ namespace MVVMCalculator.Model
 
         #endregion
 
-        #region Singleton
+        #region コンストラクタ Singleton
 
         private static Calculator instance = new Calculator();
         public static Calculator Instance
@@ -29,9 +29,9 @@ namespace MVVMCalculator.Model
             get { return instance; }
         }
 
-        #endregion
+        private Calculator() { }
 
-        private Calculator() {}
+        #endregion
 
         public double Execute(double left, double right, Type type)
         {

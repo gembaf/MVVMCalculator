@@ -13,7 +13,7 @@ namespace MVVMCalculator.ViewModel
     {
         #region プロパティ
 
-        #region CurrentPage
+        #region ViewModelBase CurrentPage
 
         private ViewModelBase _CurrentPage;
         public ViewModelBase CurrentPage
@@ -31,7 +31,7 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        #region CalculatorPage
+        #region CalculatorViewModel CalculatorPage
 
         private CalculatorViewModel _CalculatorPage;
         public CalculatorViewModel CalculatorPage
@@ -56,6 +56,5 @@ namespace MVVMCalculator.ViewModel
             CalculatorPage = new CalculatorViewModel();
             CurrentPage = CalculatorPage;
         }
-
     }
 }

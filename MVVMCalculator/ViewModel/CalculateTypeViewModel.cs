@@ -22,9 +22,21 @@ namespace MVVMCalculator.ViewModel
             {Calculator.Type.Div, "割り算"}
         };
 
+        #region プロパティ
+
+        #region Calculator.Type CalculateType
+
         public Calculator.Type CalculateType { get; private set; }
 
+        #endregion
+
+        #region string Label
+
         public string Label { get; private set; }
+
+        #endregion
+
+        #endregion
 
         /// <summary>
         /// Initializes a new instance of the CalculateTypeViewModel class.

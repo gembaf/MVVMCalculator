@@ -17,17 +17,17 @@ namespace MVVMCalculator.ViewModel
     {
         #region プロパティ
 
-        #region Left
+        #region double Left
 
         private double _Left;
         public double Left
         {
-            get { return this._Left; }
+            get { return _Left; }
             set
             {
-                if (this._Left != value)
+                if (_Left != value)
                 {
-                    this._Left = value;
+                    _Left = value;
                     RaisePropertyChanged("Left");
                 }
             }
@@ -35,17 +35,17 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        #region Right
+        #region double Right
 
         private double _Right;
         public double Right
         {
-            get { return this._Right; }
+            get { return _Right; }
             set
             {
-                if (this._Right != value)
+                if (_Right != value)
                 {
-                    this._Right = value;
+                    _Right = value;
                     RaisePropertyChanged("Right");
                 }
             }
@@ -53,17 +53,17 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        #region Result
+        #region double Result
 
         private double _Result;
         public double Result
         {
-            get { return this._Result; }
+            get { return _Result; }
             set
             {
-                if (this._Result != value)
+                if (_Result != value)
                 {
-                    this._Result = value;
+                    _Result = value;
                     RaisePropertyChanged("Result");
                 }
             }
@@ -71,21 +71,21 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        #region CalculateTypes
+        #region IEnumerable<CalculateTypeViewModel> CalculateTypes
 
         public IEnumerable<CalculateTypeViewModel> CalculateTypes { get; private set; }
 
         #endregion
 
-        #region SelectedCalculateType
+        #region CalculateTypeViewModel SelectedCalculateType
 
         private CalculateTypeViewModel _SelectedCalculateType;
         public CalculateTypeViewModel SelectedCalculateType
         {
-            get { return this._SelectedCalculateType; }
+            get { return _SelectedCalculateType; }
             set
             {
-                this._SelectedCalculateType = value;
+                _SelectedCalculateType = value;
                 RaisePropertyChanged("SelectedCalculateType");
             }
         }
@@ -114,19 +114,16 @@ namespace MVVMCalculator.ViewModel
             {
                 if (_CalculateCommand == null)
                 {
-                    _CalculateCommand = new RelayCommand(Calculate);
+                    _CalculateCommand = new RelayCommand(() => 
+                        Result = Calculator.Instance.Execute(Left, Right, SelectedCalculateType.CalculateType)
+                    );
                 }
-                return this._CalculateCommand;
+                return _CalculateCommand;
             }
         }
 
         #endregion
 
         #endregion
-
-        private void Calculate()
-        {
-            Result = Calculator.Instance.Execute(this.Left, this.Right, this.SelectedCalculateType.CalculateType);
-        }
     }
 }
