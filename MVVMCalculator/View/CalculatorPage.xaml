@@ -43,6 +43,14 @@
                    VerticalAlignment="Center"
                    Grid.Column="0"
                    Grid.Row="1"/>
+        <ComboBox ItemsSource="{Binding CalculateTypes}"
+                  DisplayMemberPath="Label"
+                  SelectedItem="{Binding SelectedCalculateType}"
+                  SelectedIndex="0"
+                  Height="30"
+                  Width="250"
+                  Grid.Column="1"
+                  Grid.Row="1"/>
 
         <TextBlock Text="右辺"
                    FontSize="20"

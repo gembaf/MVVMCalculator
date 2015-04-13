@@ -1,7 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MVVMCalculator.Model;
-using System.Windows;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Input;
 
 namespace MVVMCalculator.ViewModel
@@ -70,6 +71,27 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
+        #region CalculateTypes
+
+        public IEnumerable<CalculateTypeViewModel> CalculateTypes { get; private set; }
+
+        #endregion
+
+        #region SelectedCalculateType
+
+        private CalculateTypeViewModel _SelectedCalculateType;
+        public CalculateTypeViewModel SelectedCalculateType
+        {
+            get { return this._SelectedCalculateType; }
+            set
+            {
+                this._SelectedCalculateType = value;
+                RaisePropertyChanged("SelectedCalculateType");
+            }
+        }
+
+        #endregion
+
         #endregion
 
         /// <summary>
@@ -77,6 +99,8 @@ namespace MVVMCalculator.ViewModel
         /// </summary>
         public CalculatorViewModel()
         {
+            this.CalculateTypes = CalculateTypeViewModel.Create();
+            this.SelectedCalculateType = this.CalculateTypes.First();
         }
 
         #region コマンド
