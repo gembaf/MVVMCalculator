@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using MVVMCalculator.Model;
+using System.Windows.Input;
 
 namespace MVVMCalculator.ViewModel
 {
@@ -18,12 +20,12 @@ namespace MVVMCalculator.ViewModel
         private ViewModelBase _CurrentPage;
         public ViewModelBase CurrentPage
         {
-            get { return this._CurrentPage; }
+            get { return _CurrentPage; }
             set
             {
-                if (this._CurrentPage != value)
+                if (_CurrentPage != value)
                 {
-                    this._CurrentPage = value;
+                    _CurrentPage = value;
                     RaisePropertyChanged("CurrentPage");
                 }
             }
@@ -36,13 +38,31 @@ namespace MVVMCalculator.ViewModel
         private CalculatorViewModel _CalculatorPage;
         public CalculatorViewModel CalculatorPage
         {
-            get { return this._CalculatorPage; }
+            get { return _CalculatorPage; }
             set
             {
-                if (this._CalculatorPage != value)
+                if (_CalculatorPage != value)
                 {
-                    this._CalculatorPage = value;
+                    _CalculatorPage = value;
                     RaisePropertyChanged("CalculatorPage");
+                }
+            }
+        }
+
+        #endregion
+
+        #region IndexViewModel IndexPage
+
+        private IndexViewModel _IndexPage;
+        public IndexViewModel IndexPage
+        {
+            get { return _IndexPage; }
+            set
+            {
+                if (_IndexPage != value)
+                {
+                    _IndexPage = value;
+                    RaisePropertyChanged("IndexPage");
                 }
             }
         }
@@ -54,7 +74,46 @@ namespace MVVMCalculator.ViewModel
         public MainViewModel()
         {
             CalculatorPage = new CalculatorViewModel();
+            IndexPage = new IndexViewModel();
             CurrentPage = CalculatorPage;
         }
+
+        #region コマンド
+
+        #region RenderCalculatorPage
+
+        private ICommand _RenderCalculatorPage;
+        public ICommand RenderCalculatorPage
+        {
+            get
+            {
+                if (_RenderCalculatorPage == null)
+                {
+                    _RenderCalculatorPage = new RelayCommand(() => CurrentPage = CalculatorPage);
+                }
+                return _RenderCalculatorPage;
+            }
+        }
+
+        #endregion
+
+        #region RenderIndexPage
+
+        private ICommand _RenderIndexPage;
+        public ICommand RenderIndexPage
+        {
+            get
+            {
+                if (_RenderIndexPage == null)
+                {
+                    _RenderIndexPage = new RelayCommand(() => CurrentPage = IndexPage);
+                }
+                return _RenderIndexPage;
+            }
+        }
+
+        #endregion
+
+        #endregion
     }
 }

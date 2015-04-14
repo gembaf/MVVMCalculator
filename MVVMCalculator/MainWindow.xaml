@@ -16,6 +16,9 @@
         <DataTemplate DataType="{x:Type localvm:CalculatorViewModel}">
             <localview:CalculatorPage />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type localvm:IndexViewModel}">
+            <localview:IndexPage />
+        </DataTemplate>
     </Window.Resources>
 
     <Grid>
@@ -24,6 +27,15 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="400" />
         </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="10, 10, 10, 10">
+            <Button Content="計算画面"
+                    Command="{Binding RenderCalculatorPage}"
+                    Height="40"/>
+            <Button Content="一覧"
+                    Command="{Binding RenderIndexPage}"
+                    Height="40"/>
+        </StackPanel>
 
         <ContentControl Content="{Binding CurrentPage}"
                         Grid.Column="1"/>

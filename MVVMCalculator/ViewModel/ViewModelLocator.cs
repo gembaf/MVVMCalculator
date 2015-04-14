@@ -40,6 +40,7 @@ namespace MVVMCalculator.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<CalculatorViewModel>();
+            SimpleIoc.Default.Register<IndexViewModel>();
         }
 
         /// <summary>
@@ -61,6 +62,14 @@ namespace MVVMCalculator.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<CalculatorViewModel>();
+            }
+        }
+
+        public IndexViewModel IndexViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<IndexViewModel>();
             }
         }
 
