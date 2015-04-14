@@ -30,9 +30,11 @@
 
         <StackPanel Margin="10, 10, 10, 10">
             <Button Content="計算画面"
+                    Margin="0, 5, 0, 5"
                     Command="{Binding RenderCalculatorPage}"
                     Height="40"/>
             <Button Content="一覧"
+                    Margin="0, 5, 0, 5"
                     Command="{Binding RenderIndexPage}"
                     Height="40"/>
         </StackPanel>
