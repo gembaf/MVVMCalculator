@@ -14,8 +14,8 @@
                                  d:IsDataSource="True" />
             
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Skins/MainSkin.xaml" />
                 <ResourceDictionary Source="Themes/UXMusingsBubblyBlue.xaml" />
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

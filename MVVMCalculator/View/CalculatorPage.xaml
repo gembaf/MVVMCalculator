@@ -25,23 +25,16 @@
             <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="左辺"
-                   FontSize="20"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
+        <TextBlock Style="{StaticResource TableHeader}"
+                   Text="左辺"
                    Grid.Column="0"
                    Grid.Row="0"/>
         <TextBox Text="{Binding Left}"
-                 FontSize="15"
-                 Height="40"
-                 Width="250"
                  Grid.Column="1"
                  Grid.Row="0"/>
 
-        <TextBlock Text="計算方法"
-                   FontSize="20"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
+        <TextBlock Style="{StaticResource TableHeader}"
+                   Text="計算方法"
                    Grid.Column="0"
                    Grid.Row="1"/>
         <ComboBox ItemsSource="{Binding CalculateTypes}"
@@ -53,16 +46,11 @@
                   Grid.Column="1"
                   Grid.Row="1"/>
 
-        <TextBlock Text="右辺"
-                   FontSize="20"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
+        <TextBlock Style="{StaticResource TableHeader}"
+                   Text="右辺"
                    Grid.Column="0"
                    Grid.Row="2"/>
         <TextBox Text="{Binding Right}"
-                 FontSize="15"
-                 Height="40"
-                 Width="250"
                  Grid.Column="1"
                  Grid.Row="2"/>
 
@@ -70,19 +58,15 @@
                 Content="計算実行"
                 Height="40"
                 Width="250"
+                FontSize="15"
                 Grid.Column="1"
                 Grid.Row="3"/>
 
-        <TextBlock Text="計算結果"
-                   FontSize="20"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
+        <TextBlock Style="{StaticResource TableHeader}"
+                   Text="計算結果"
                    Grid.Column="0"
                    Grid.Row="4"/>
         <TextBox Text="{Binding Result}"
-                 FontSize="15"
-                 Height="40"
-                 Width="250"
                  Grid.Column="1"
                  Grid.Row="4"/>
 
