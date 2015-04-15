@@ -11,19 +11,23 @@
              DataContext="{Binding IndexViewModel, Source={StaticResource Locator}}">
 
     <Grid Margin="10">
-        <ListBox ItemsSource="{Binding FunctionList}" Margin="10">
+        <ListBox ItemsSource="{Binding FunctionList.Collections}"
+                 Margin="10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="350">
+                    <Grid Width="330">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="{Binding Left}" Grid.Column="0" />
-                        <TextBlock Text="{Binding CalculateType}" Grid.Column="1" />
-                        <TextBlock Text="{Binding Right}" Grid.Column="2" />
+                        <TextBlock Text="{Binding Left}"
+                                   Grid.Column="0"/>
+                        <TextBlock Text="{Binding CalculateType}"
+                                   Grid.Column="1"/>
+                        <TextBlock Text="{Binding Right}"
+                                   Grid.Column="2"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

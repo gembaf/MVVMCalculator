@@ -73,6 +73,7 @@
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\Function.cs" />
+    <Compile Include="Model\FunctionList.cs" />
     <Compile Include="Model\IDataService.cs" />
     <Compile Include="ViewModel\CalculateTypeViewModel.cs" />
     <Compile Include="ViewModel\CalculatorViewModel.cs" />
@@ -134,9 +135,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FirstFloor.ModernUI.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

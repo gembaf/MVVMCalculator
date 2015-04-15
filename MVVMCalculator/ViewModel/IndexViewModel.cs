@@ -12,8 +12,12 @@ namespace MVVMCalculator.ViewModel
     /// </summary>
     public class IndexViewModel : ViewModelBase
     {
-        private List<Function> _FunctionList;
-        public List<Function> FunctionList
+        #region プロパティ
+
+        #region FunctionList FunctionList
+
+        private FunctionList _FunctionList;
+        public FunctionList FunctionList
         {
             get { return _FunctionList; }
             set
@@ -26,18 +30,16 @@ namespace MVVMCalculator.ViewModel
             }
         }
 
+        #endregion
+
+        #endregion
+
         /// <summary>
         /// Initializes a new instance of the IndexViewModel class.
         /// </summary>
         public IndexViewModel()
         {
-            FunctionList = new List<Function>
-            {
-                new Function(1, 2, Calculator.Type.Add),
-                new Function(10, 2, Calculator.Type.Sub),
-                new Function(3, 2, Calculator.Type.Mul),
-                new Function(6, 2, Calculator.Type.Div)
-            };
+            FunctionList = FunctionList.Instance;
         }
     }
 }
