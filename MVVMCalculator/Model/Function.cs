@@ -14,6 +14,13 @@ namespace MVVMCalculator.Model
 
         public Calculator.Type CalculateType { get; set; }
 
+        public Function(double left, double right, Calculator.Type type)
+        {
+            this.Left = left;
+            this.Right = right;
+            this.CalculateType = type;
+        }
+
         public double Calculate()
         {
             Calculator calc = Calculator.Instance;

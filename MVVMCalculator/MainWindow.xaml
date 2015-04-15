@@ -7,8 +7,8 @@
         xmlns:localvm="clr-namespace:MVVMCalculator.ViewModel"
         xmlns:localview="clr-namespace:MVVMCalculator.View"
         mc:Ignorable="d ignore"
-        Height="430"
-        Width="600"
+        Height="440"
+        Width="620"
         Title="MVVMCalculator"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     
@@ -21,20 +21,20 @@
         </DataTemplate>
     </Window.Resources>
 
-    <Grid>
+    <Grid Margin="10">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="10, 10, 10, 10">
+        <StackPanel Grid.Column="0">
             <Button Content="計算画面"
-                    Margin="0, 5, 0, 5"
+                    Margin="0,5,0,5"
                     Command="{Binding RenderCalculatorPage}"
                     Height="40"/>
             <Button Content="一覧"
-                    Margin="0, 5, 0, 5"
+                    Margin="0,5,0,5"
                     Command="{Binding RenderIndexPage}"
                     Height="40"/>
         </StackPanel>

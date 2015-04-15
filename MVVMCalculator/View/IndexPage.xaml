@@ -1,12 +1,32 @@
 ﻿<UserControl x:Class="MVVMCalculator.View.IndexPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ignore="http://www.ignore.com"
-        mc:Ignorable="d ignore"
-        DataContext="{Binding IndexViewModel, Source={StaticResource Locator}}">
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ignore="http://www.ignore.com"
+             mc:Ignorable="d ignore"
+             Height="400"
+             Width="400"
+             Background="White"
+             DataContext="{Binding IndexViewModel, Source={StaticResource Locator}}">
 
-    <Grid>
+    <Grid Margin="10">
+        <ListBox ItemsSource="{Binding FunctionList}" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="350">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Left}" Grid.Column="0" />
+                        <TextBlock Text="{Binding CalculateType}" Grid.Column="1" />
+                        <TextBlock Text="{Binding Right}" Grid.Column="2" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>
