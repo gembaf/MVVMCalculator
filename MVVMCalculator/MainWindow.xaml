@@ -9,26 +9,15 @@
         Width="620"
         Title="MVVMCalculator"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
-    
-    <Grid Margin="10">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0">
-            <Button Content="計算画面"
-                    Margin="0,5,0,5"
-                    Command="{Binding RenderCalculatorPage}"
-                    Height="40"/>
-            <Button Content="一覧"
-                    Margin="0,5,0,5"
-                    Command="{Binding RenderIndexPage}"
-                    Height="40"/>
-        </StackPanel>
-
-        <ContentControl Content="{Binding CurrentPage}"
-                        Grid.Column="1"/>
+    <Grid Margin="0">
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="計算画面">
+                <ContentControl Content="{Binding CalculatorPage}" />
+            </TabItem>
+            <TabItem Header="一覧">
+                <ContentControl Content="{Binding IndexPage}" />
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

@@ -28,7 +28,7 @@ namespace MVVMCalculator.ViewModel
                 if (_FunctionList != value)
                 {
                     _FunctionList = value;
-                    RaisePropertyChanged("FunctioinList");
+                    RaisePropertyChanged("FunctionList");
                 }
             }
         }

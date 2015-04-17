@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using MVVMCalculator.Model;
 using System.Windows.Input;
 
 namespace MVVMCalculator.ViewModel
@@ -77,43 +76,5 @@ namespace MVVMCalculator.ViewModel
             IndexPage = new IndexViewModel();
             CurrentPage = CalculatorPage;
         }
-
-        #region コマンド
-
-        #region RenderCalculatorPage
-
-        private ICommand _RenderCalculatorPage;
-        public ICommand RenderCalculatorPage
-        {
-            get
-            {
-                if (_RenderCalculatorPage == null)
-                {
-                    _RenderCalculatorPage = new RelayCommand(() => CurrentPage = CalculatorPage);
-                }
-                return _RenderCalculatorPage;
-            }
-        }
-
-        #endregion
-
-        #region RenderIndexPage
-
-        private ICommand _RenderIndexPage;
-        public ICommand RenderIndexPage
-        {
-            get
-            {
-                if (_RenderIndexPage == null)
-                {
-                    _RenderIndexPage = new RelayCommand(() => CurrentPage = IndexPage);
-                }
-                return _RenderIndexPage;
-            }
-        }
-
-        #endregion
-
-        #endregion
     }
 }
