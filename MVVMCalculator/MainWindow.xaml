@@ -4,23 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
-        xmlns:localvm="clr-namespace:MVVMCalculator.ViewModel"
-        xmlns:localview="clr-namespace:MVVMCalculator.View"
         mc:Ignorable="d ignore"
         Height="440"
         Width="620"
         Title="MVVMCalculator"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type localvm:CalculatorViewModel}">
-            <localview:CalculatorPage />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type localvm:IndexViewModel}">
-            <localview:IndexPage />
-        </DataTemplate>
-    </Window.Resources>
-
     <Grid Margin="10">
 
         <Grid.ColumnDefinitions>

@@ -43,12 +43,8 @@ namespace MVVMCalculator.ViewModel
             SimpleIoc.Default.Register<IndexViewModel>();
         }
 
-        /// <summary>
-        /// Gets the Main property.
-        /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
-            "CA1822:MarkMembersAsStatic",
-            Justification = "This non-static member is needed for data binding purposes.")]
+        #region MainViewModel Main
+
         public MainViewModel Main
         {
             get
@@ -56,6 +52,10 @@ namespace MVVMCalculator.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
+
+        #endregion
+
+        #region CalculatorViewModel CalculatorViewModel
 
         public CalculatorViewModel CalculatorViewModel
         {
@@ -65,6 +65,10 @@ namespace MVVMCalculator.ViewModel
             }
         }
 
+        #endregion
+
+        #region IndexViewModel IndexViewModel
+
         public IndexViewModel IndexViewModel
         {
             get
@@ -72,6 +76,8 @@ namespace MVVMCalculator.ViewModel
                 return ServiceLocator.Current.GetInstance<IndexViewModel>();
             }
         }
+
+        #endregion
 
         /// <summary>
         /// Cleans up all the resources.
