@@ -21,6 +21,9 @@
             <DataTemplate DataType="{x:Type localvm:IndexViewModel}">
                 <localview:IndexPage />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type localvm:FunctionDialogViewModel}">
+                <localview:FunctionDialog />
+            </DataTemplate>
 
             <!--SkinとThemeの適用-->
             <ResourceDictionary.MergedDictionaries>

@@ -77,11 +77,16 @@
     <Compile Include="Model\IDataService.cs" />
     <Compile Include="ViewModel\CalculateTypeViewModel.cs" />
     <Compile Include="ViewModel\CalculatorViewModel.cs" />
+    <Compile Include="ViewModel\FunctionDialogViewModel.cs" />
     <Compile Include="ViewModel\IndexViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\Behavior\MvvmDialogBehavior.cs" />
     <Compile Include="View\CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FunctionDialog.xaml.cs">
+      <DependentUpon>FunctionDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\IndexPage.xaml.cs">
       <DependentUpon>IndexPage.xaml</DependentUpon>
@@ -101,6 +106,10 @@
     <Page Include="Skins\MainSkin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FunctionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\IndexPage.xaml">
       <SubType>Form</SubType>

@@ -41,6 +41,7 @@ namespace MVVMCalculator.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<CalculatorViewModel>();
             SimpleIoc.Default.Register<IndexViewModel>();
+            SimpleIoc.Default.Register<FunctionDialogViewModel>();
         }
 
         #region MainViewModel Main
@@ -74,6 +75,18 @@ namespace MVVMCalculator.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<IndexViewModel>();
+            }
+        }
+
+        #endregion
+
+        #region FunctionDialogViewModel FunctionDialogViewModel
+
+        public FunctionDialogViewModel FunctionDialogViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<FunctionDialogViewModel>();
             }
         }
 

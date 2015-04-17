@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mvvmdialogbehavior="clr-namespace:MvvmDialogBehavior"
              xmlns:ignore="http://www.ignore.com"
              mc:Ignorable="d ignore"
              Height="400"
@@ -10,8 +12,23 @@
              Background="White"
              DataContext="{Binding IndexViewModel, Source={StaticResource Locator}}">
 
+    <i:Interaction.Behaviors>
+        <mvvmdialogbehavior:DialogBehavior Content="{Binding Dialog}" />
+    </i:Interaction.Behaviors>
+
     <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="13*" />
+        </Grid.RowDefinitions>
+
+        <Button Content="計算式の追加"
+                Command="{Binding OpenDialogCommand}"
+                Grid.Row="0"
+                Width="150"/>
         <ListBox ItemsSource="{Binding FunctionList.Collections}"
+                 Grid.Row="1"
                  Margin="10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
