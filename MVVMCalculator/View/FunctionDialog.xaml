@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:mvvmdialogbehavior="clr-namespace:MvvmDialogBehavior"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             mc:Ignorable="d"
+             Background="White"
+             d:DesignHeight="400" d:DesignWidth="400">
 
     <i:Interaction.Behaviors>
         <mvvmdialogbehavior:WindowStyleBehavior>
@@ -18,7 +19,48 @@
         </mvvmdialogbehavior:WindowStyleBehavior>
     </i:Interaction.Behaviors>
 
-    <Grid>
-        <TextBlock>hogehoge</TextBlock>
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Style="{StaticResource TableHeader}"
+                   Text="左辺"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
+        <TextBox Text="{Binding Left}"
+                 Grid.Column="1"
+                 Grid.Row="0"/>
+
+        <TextBlock Style="{StaticResource TableHeader}"
+                   Text="計算方法"
+                   Grid.Column="0"
+                   Grid.Row="1"/>
+        <ComboBox ItemsSource="{Binding CalculateTypes}"
+                  DisplayMemberPath="Label"
+                  SelectedItem="{Binding SelectedCalculateType}"
+                  SelectedIndex="0"
+                  Height="25"
+                  Width="250"
+                  Grid.Column="1"
+                  Grid.Row="1"/>
+
+        <TextBlock Style="{StaticResource TableHeader}"
+                   Text="右辺"
+                   Grid.Column="0"
+                   Grid.Row="2"/>
+        <TextBox Text="{Binding Right}"
+                 Grid.Column="1"
+                 Grid.Row="2"/>
+
     </Grid>
 </UserControl>
