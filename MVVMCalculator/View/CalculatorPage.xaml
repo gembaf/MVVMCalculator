@@ -7,8 +7,7 @@
              mc:Ignorable="d ignore"
              Height="400"
              Width="400"
-             Background="White"
-             DataContext="{Binding CalculatorViewModel, Source={StaticResource Locator}}">
+             Background="White">
 
     <Grid Margin="10">
 

@@ -9,8 +9,7 @@
              mc:Ignorable="d ignore"
              Height="400"
              Width="400"
-             Background="White"
-             DataContext="{Binding IndexViewModel, Source={StaticResource Locator}}">
+             Background="White">
 
     <i:Interaction.Behaviors>
         <mvvmdialogbehavior:DialogBehavior Content="{Binding Dialog}" />

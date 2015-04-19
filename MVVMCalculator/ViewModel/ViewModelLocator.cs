@@ -57,42 +57,6 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        #region CalculatorViewModel CalculatorViewModel
-
-        public CalculatorViewModel CalculatorViewModel
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<CalculatorViewModel>();
-            }
-        }
-
-        #endregion
-
-        #region IndexViewModel IndexViewModel
-
-        public IndexViewModel IndexViewModel
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<IndexViewModel>();
-            }
-        }
-
-        #endregion
-
-        #region FunctionDialogViewModel FunctionDialogViewModel
-
-        public FunctionDialogViewModel FunctionDialogViewModel
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<FunctionDialogViewModel>();
-            }
-        }
-
-        #endregion
-
         /// <summary>
         /// Cleans up all the resources.
         /// </summary>
