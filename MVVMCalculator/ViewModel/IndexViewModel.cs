@@ -33,6 +33,24 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
+        #region Function SelectedFunction
+
+        private Function _SelectedFunction;
+        public Function SelectedFunction
+        {
+            get { return _SelectedFunction; }
+            set
+            {
+                if (_SelectedFunction != value)
+                {
+                    _SelectedFunction = value;
+                    RaisePropertyChanged("SelectedFunction");
+                }
+            }
+        }
+
+        #endregion
+
         #region FunctionDialogViewModel Dialog
 
         private FunctionDialogViewModel _Dialog;
