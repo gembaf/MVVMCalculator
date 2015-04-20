@@ -4,15 +4,27 @@ namespace MVVMCalculator.Model
 {
     public class FunctionList
     {
-        public List<Function> Collections { get; private set; }
+        #region プロパティ
 
-        #region static FunctionList Instance
+        #region List<Function> Collections
+
+        public List<Function> Collections { get; private set; }
+        
+        #endregion
+
+        #endregion
+
+        #region public static method
+
+        #region FunctionList Instance
 
         private static FunctionList instance = new FunctionList();
         public static FunctionList Instance
         {
             get { return instance; }
         }
+
+        #endregion
 
         #endregion
 
@@ -23,6 +35,8 @@ namespace MVVMCalculator.Model
         }
 
         #endregion
+
+        #region public method
 
         public void Add(Function func)
         {
@@ -38,5 +52,7 @@ namespace MVVMCalculator.Model
         {
             Collections = XML.XMLFileManager.ReadXml<List<Function>>("FunctionData.xml");
         }
+
+        #endregion
     }
 }

@@ -94,14 +94,15 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        /// <summary>
-        /// Initializes a new instance of the CalculatorViewModel class.
-        /// </summary>
+        #region コンストラクタ
+
         public CalculatorViewModel()
         {
             this.CalculateTypes = CalculateTypeViewModel.Create();
             this.SelectedCalculateType = this.CalculateTypes.First();
         }
+
+        #endregion
 
         #region コマンド
 

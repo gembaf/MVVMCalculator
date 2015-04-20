@@ -1,8 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MVVMCalculator.Model;
-using System;
-using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace MVVMCalculator.ViewModel
@@ -55,15 +53,18 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        /// <summary>
-        /// Initializes a new instance of the IndexViewModel class.
-        /// </summary>
+        #region コンストラクタ
+
         public IndexViewModel()
         {
             FunctionList = FunctionList.Instance;
         }
 
+        #endregion
+        
         #region コマンド
+
+        #region OpenDialogCommand
 
         private ICommand _OpenDialogCommand;
         public ICommand OpenDialogCommand
@@ -86,6 +87,8 @@ namespace MVVMCalculator.ViewModel
             FunctionList.Save();
             Dialog = null;
         }
+
+        #endregion
 
         #endregion
     }

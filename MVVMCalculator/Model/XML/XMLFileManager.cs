@@ -5,6 +5,8 @@ namespace MVVMCalculator.Model.XML
 {
     public static class XMLFileManager
     {
+        #region public static method
+
         public static T ReadXml<T>(string filePath)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -21,5 +23,7 @@ namespace MVVMCalculator.Model.XML
             serializer.Serialize(stream, obj);
             stream.Close();
         }
+
+        #endregion
     }
 }

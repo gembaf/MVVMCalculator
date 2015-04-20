@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace MVVMCalculator.Model
 {
     public class Calculator
@@ -21,7 +16,7 @@ namespace MVVMCalculator.Model
 
         #endregion
 
-        #region static Calculator Instance
+        #region public static method
 
         private static Calculator instance = new Calculator();
         public static Calculator Instance
@@ -36,6 +31,8 @@ namespace MVVMCalculator.Model
         private Calculator() { }
 
         #endregion
+
+        #region public method
 
         public double Execute(double left, double right, Type type)
         {
@@ -59,5 +56,7 @@ namespace MVVMCalculator.Model
 
             return result;
         }
+
+        #endregion
     }
 }

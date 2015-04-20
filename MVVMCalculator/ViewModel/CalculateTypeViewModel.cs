@@ -13,6 +13,8 @@ namespace MVVMCalculator.ViewModel
     /// </summary>
     public class CalculateTypeViewModel : ViewModelBase
     {
+        #region private static variable
+
         private static Dictionary<Calculator.Type, string> calculateTypeName = new Dictionary<Calculator.Type, string>
         {
             {Calculator.Type.None, "未選択"},
@@ -21,6 +23,25 @@ namespace MVVMCalculator.ViewModel
             {Calculator.Type.Mul, "掛け算"},
             {Calculator.Type.Div, "割り算"}
         };
+
+        #endregion
+
+        #region public static method
+
+        public static CalculateTypeViewModel Create(Calculator.Type type)
+        {
+            return new CalculateTypeViewModel(type, calculateTypeName[type]);
+        }
+
+        public static IEnumerable<CalculateTypeViewModel> Create()
+        {
+            foreach (Calculator.Type e in Enum.GetValues(typeof(Calculator.Type)))
+            {
+                yield return Create(e);
+            }
+        }
+
+        #endregion
 
         #region プロパティ
 
@@ -38,26 +59,14 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        /// <summary>
-        /// Initializes a new instance of the CalculateTypeViewModel class.
-        /// </summary>
+        #region コンストラクタ
+
         public CalculateTypeViewModel(Calculator.Type type, string label)
         {
             this.CalculateType = type;
             this.Label = label;
         }
 
-        public static CalculateTypeViewModel Create(Calculator.Type type)
-        {
-            return new CalculateTypeViewModel(type, calculateTypeName[type]);
-        }
-
-        public static IEnumerable<CalculateTypeViewModel> Create()
-        {
-            foreach (Calculator.Type e in Enum.GetValues(typeof(Calculator.Type)))
-            {
-                yield return Create(e);
-            }
-        }
+        #endregion
     }
 }

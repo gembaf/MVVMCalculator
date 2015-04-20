@@ -70,11 +70,15 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
+        #region コンストラクタ
+
         public MainViewModel()
         {
             CalculatorPage = new CalculatorViewModel();
             IndexPage = new IndexViewModel();
             CurrentPage = CalculatorPage;
         }
+        
+        #endregion
     }
 }

@@ -76,11 +76,14 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
+        #region private variable
+
         private Action closeAction;
 
-        /// <summary>
-        /// Initializes a new instance of the FunctionDialogViewModel class.
-        /// </summary>
+        #endregion
+
+        #region コンストラクタ
+
         public FunctionDialogViewModel(Action closeAction)
         {
             this.closeAction = closeAction;
@@ -88,7 +91,11 @@ namespace MVVMCalculator.ViewModel
             SelectedCalculateType = CalculateTypes.First();
         }
 
+        #endregion
+
         #region コマンド
+
+        #region CreateFunctionCommand
 
         private ICommand _CreateFunctionCommand;
         public ICommand CreateFunctionCommand
@@ -102,6 +109,8 @@ namespace MVVMCalculator.ViewModel
                 return _CreateFunctionCommand;
             }
         }
+
+        #endregion
 
         #endregion
     }
