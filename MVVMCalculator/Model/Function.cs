@@ -29,12 +29,16 @@ namespace MVVMCalculator.Model
 
         public Function(double left, double right, Calculator.Type type)
         {
-            this.Left = left;
-            this.Right = right;
-            this.CalculateType = type;
+            Left = left;
+            Right = right;
+            CalculateType = type;
         }
 
-        public Function() { }
+        public Function() {
+            Left = 0;
+            Right = 0;
+            CalculateType = Calculator.Type.None;
+        }
         
         #endregion
 

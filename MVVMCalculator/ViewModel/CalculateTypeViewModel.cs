@@ -5,12 +5,6 @@ using System.Collections.Generic;
 
 namespace MVVMCalculator.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that a View can data bind to.
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
     public class CalculateTypeViewModel : ViewModelBase
     {
         #region private static variable

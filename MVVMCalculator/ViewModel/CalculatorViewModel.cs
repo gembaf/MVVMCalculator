@@ -1,8 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using MVVMCalculator.Model;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Input;
 
 namespace MVVMCalculator.ViewModel
@@ -17,36 +14,18 @@ namespace MVVMCalculator.ViewModel
     {
         #region プロパティ
 
-        #region double Left
+        #region FunctionViewModel FunctionViewModel
 
-        private double _Left;
-        public double Left
+        private FunctionViewModel _FunctionViewModel;
+        public FunctionViewModel FunctionViewModel
         {
-            get { return _Left; }
+            get { return _FunctionViewModel; }
             set
             {
-                if (_Left != value)
+                if (_FunctionViewModel != value)
                 {
-                    _Left = value;
-                    RaisePropertyChanged("Left");
-                }
-            }
-        }
-
-        #endregion
-
-        #region double Right
-
-        private double _Right;
-        public double Right
-        {
-            get { return _Right; }
-            set
-            {
-                if (_Right != value)
-                {
-                    _Right = value;
-                    RaisePropertyChanged("Right");
+                    _FunctionViewModel = value;
+                    RaisePropertyChanged("FunctionViewModel");
                 }
             }
         }
@@ -71,35 +50,12 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        #region IEnumerable<CalculateTypeViewModel> CalculateTypes
-
-        public IEnumerable<CalculateTypeViewModel> CalculateTypes { get; private set; }
-
-        #endregion
-
-        #region CalculateTypeViewModel SelectedCalculateType
-
-        private CalculateTypeViewModel _SelectedCalculateType;
-        public CalculateTypeViewModel SelectedCalculateType
-        {
-            get { return _SelectedCalculateType; }
-            set
-            {
-                _SelectedCalculateType = value;
-                RaisePropertyChanged("SelectedCalculateType");
-            }
-        }
-
-        #endregion
-
         #endregion
 
         #region コンストラクタ
 
-        public CalculatorViewModel()
-        {
-            this.CalculateTypes = CalculateTypeViewModel.Create();
-            this.SelectedCalculateType = this.CalculateTypes.First();
+        public CalculatorViewModel() {
+            FunctionViewModel = new FunctionViewModel();
         }
 
         #endregion
@@ -116,7 +72,7 @@ namespace MVVMCalculator.ViewModel
                 if (_CalculateCommand == null)
                 {
                     _CalculateCommand = new RelayCommand(() => 
-                        Result = Calculator.Instance.Execute(Left, Right, SelectedCalculateType.CalculateType)
+                        Result = FunctionViewModel.Result
                     );
                 }
                 return _CalculateCommand;

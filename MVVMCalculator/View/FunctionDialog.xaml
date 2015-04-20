@@ -39,7 +39,7 @@
                    Text="左辺"
                    Grid.Column="0"
                    Grid.Row="0"/>
-        <TextBox Text="{Binding Left}"
+        <TextBox Text="{Binding FunctionViewModel.Left}"
                  Grid.Column="1"
                  Grid.Row="0"/>
 
@@ -47,9 +47,9 @@
                    Text="計算方法"
                    Grid.Column="0"
                    Grid.Row="1"/>
-        <ComboBox ItemsSource="{Binding CalculateTypes}"
+        <ComboBox ItemsSource="{Binding FunctionViewModel.CalculateTypes}"
                   DisplayMemberPath="Label"
-                  SelectedItem="{Binding SelectedCalculateType}"
+                  SelectedItem="{Binding FunctionViewModel.SelectedCalculateType}"
                   SelectedIndex="0"
                   Height="25"
                   Width="250"
@@ -60,7 +60,7 @@
                    Text="右辺"
                    Grid.Column="0"
                    Grid.Row="2"/>
-        <TextBox Text="{Binding Right}"
+        <TextBox Text="{Binding FunctionViewModel.Right}"
                  Grid.Column="1"
                  Grid.Row="2"/>
 

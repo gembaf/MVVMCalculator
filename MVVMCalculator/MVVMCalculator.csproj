@@ -79,6 +79,7 @@
     <Compile Include="ViewModel\CalculateTypeViewModel.cs" />
     <Compile Include="ViewModel\CalculatorViewModel.cs" />
     <Compile Include="ViewModel\FunctionDialogViewModel.cs" />
+    <Compile Include="ViewModel\FunctionViewModel.cs" />
     <Compile Include="ViewModel\IndexViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

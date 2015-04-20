@@ -17,58 +17,19 @@ namespace MVVMCalculator.ViewModel
     {
         #region プロパティ
 
-        #region Left
+        #region FunctionViewModel FunctionViewModel
 
-        private double _Left;
-        public double Left
+        private FunctionViewModel _FunctionViewModel;
+        public FunctionViewModel FunctionViewModel
         {
-            get { return _Left; }
+            get { return _FunctionViewModel; }
             set
             {
-                if (_Left != value)
+                if (_FunctionViewModel != value)
                 {
-                    _Left = value;
-                    RaisePropertyChanged("Left");
+                    _FunctionViewModel = value;
+                    RaisePropertyChanged("FunctionViewModel");
                 }
-            }
-        }
-
-        #endregion
-
-        #region Right
-
-        private double _Right;
-        public double Right
-        {
-            get { return _Right; }
-            set
-            {
-                if (_Right != value)
-                {
-                    _Right = value;
-                    RaisePropertyChanged("Right");
-                }
-            }
-        }
-
-        #endregion
-
-        #region IEnumerable<CalculateTypeViewModel> CalculateTypes
-
-        public IEnumerable<CalculateTypeViewModel> CalculateTypes { get; private set; }
-
-        #endregion
-
-        #region CalculateTypeViewModel SelectedCalculateType
-
-        private CalculateTypeViewModel _SelectedCalculateType;
-        public CalculateTypeViewModel SelectedCalculateType
-        {
-            get { return _SelectedCalculateType; }
-            set
-            {
-                _SelectedCalculateType = value;
-                RaisePropertyChanged("SelectedCalculateType");
             }
         }
 
@@ -87,8 +48,7 @@ namespace MVVMCalculator.ViewModel
         public FunctionDialogViewModel(Action closeAction)
         {
             this.closeAction = closeAction;
-            CalculateTypes = CalculateTypeViewModel.Create();
-            SelectedCalculateType = CalculateTypes.First();
+            FunctionViewModel = new FunctionViewModel();
         }
 
         #endregion
