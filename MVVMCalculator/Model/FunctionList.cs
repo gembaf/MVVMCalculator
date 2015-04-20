@@ -24,6 +24,11 @@ namespace MVVMCalculator.Model
 
         #endregion
 
+        public void Save()
+        {
+            XML.XMLFileManager.WriteXml<List<Function>>(@"./FunctionData.xml", Collections);
+        }
+
         private void Load()
         {
             Collections = new List<Function>

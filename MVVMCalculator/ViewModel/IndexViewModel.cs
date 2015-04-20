@@ -73,11 +73,17 @@ namespace MVVMCalculator.ViewModel
                 if (_OpenDialogCommand == null)
                 {
                     _OpenDialogCommand = new RelayCommand(
-                        () => Dialog = new FunctionDialogViewModel(() => Dialog = null)
+                        () => Dialog = new FunctionDialogViewModel(CloseDialogAction)
                     );
                 }
                 return _OpenDialogCommand;
             }
+        }
+
+        private void CloseDialogAction()
+        {
+            FunctionList.Save();
+            Dialog = null;
         }
 
         #endregion

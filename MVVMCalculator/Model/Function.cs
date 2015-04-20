@@ -21,6 +21,8 @@ namespace MVVMCalculator.Model
             this.CalculateType = type;
         }
 
+        public Function() {}
+
         public double Calculate()
         {
             Calculator calc = Calculator.Instance;

@@ -64,5 +64,12 @@
                  Grid.Column="1"
                  Grid.Row="2"/>
 
+        <Button Content="作成"
+                Command="{Binding CreateFunctionCommand}"
+                Height="40"
+                Width="250"
+                FontSize="15"
+                Grid.Column="1"
+                Grid.Row="3"/>
     </Grid>
 </UserControl>

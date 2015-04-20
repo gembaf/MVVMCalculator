@@ -2,6 +2,8 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 
 namespace MVVMCalculator.ViewModel
 {
@@ -85,5 +87,22 @@ namespace MVVMCalculator.ViewModel
             CalculateTypes = CalculateTypeViewModel.Create();
             SelectedCalculateType = CalculateTypes.First();
         }
+
+        #region コマンド
+
+        private ICommand _CreateFunctionCommand;
+        public ICommand CreateFunctionCommand
+        {
+            get
+            {
+                if (_CreateFunctionCommand == null)
+                {
+                    _CreateFunctionCommand = new RelayCommand(() => closeAction());
+                }
+                return _CreateFunctionCommand;
+            }
+        }
+
+        #endregion
     }
 }
