@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace MVVMCalculator.Model
 {
@@ -6,9 +7,9 @@ namespace MVVMCalculator.Model
     {
         #region プロパティ
 
-        #region List<Function> Collections
+        #region ObservableCollection<Function> Collections
 
-        public List<Function> Collections { get; private set; }
+        public ObservableCollection<Function> Collections { get; private set; }
         
         #endregion
 
@@ -45,12 +46,12 @@ namespace MVVMCalculator.Model
 
         public void Save()
         {
-            XML.XMLFileManager.WriteXml<List<Function>>("FunctionData.xml", Collections);
+            XML.XMLFileManager.WriteXml<ObservableCollection<Function>>("FunctionData.xml", Collections);
         }
 
         private void Load()
         {
-            Collections = XML.XMLFileManager.ReadXml<List<Function>>("FunctionData.xml");
+            Collections = XML.XMLFileManager.ReadXml<ObservableCollection<Function>>("FunctionData.xml");
         }
 
         #endregion
