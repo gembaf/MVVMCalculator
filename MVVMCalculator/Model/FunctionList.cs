@@ -5,16 +5,6 @@ namespace MVVMCalculator.Model
 {
     public class FunctionList
     {
-        #region プロパティ
-
-        #region ObservableCollection<Function> Collections
-
-        public ObservableCollection<Function> Collections { get; private set; }
-        
-        #endregion
-
-        #endregion
-
         #region public static method
 
         #region FunctionList Instance
@@ -29,10 +19,29 @@ namespace MVVMCalculator.Model
 
         #endregion
 
+        #region プロパティ
+
+        #region ObservableCollection<Function> Collections
+
+        public ObservableCollection<Function> Collections { get; private set; }
+        
+        #endregion
+
+        #endregion
+
         #region コンストラクタ Singleton
 
         private FunctionList() {
             Load();
+        }
+
+        #endregion
+
+        #region デストラクタ
+
+        ~FunctionList()
+        {
+            Save();
         }
 
         #endregion
@@ -44,7 +53,11 @@ namespace MVVMCalculator.Model
             Collections.Add(func);
         }
 
-        public void Save()
+        #endregion
+
+        #region private method
+
+        private void Save()
         {
             XML.XMLFileManager.WriteXml<ObservableCollection<Function>>("FunctionData.xml", Collections);
         }
