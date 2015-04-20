@@ -82,6 +82,7 @@ namespace MVVMCalculator.ViewModel
 
         private void CloseDialogAction()
         {
+            FunctionList.Add(new Function(Dialog.Left, Dialog.Right, Dialog.SelectedCalculateType.CalculateType));
             FunctionList.Save();
             Dialog = null;
         }

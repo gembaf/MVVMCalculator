@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Input;
 
 namespace MVVMCalculator.ViewModel
 {
