@@ -26,21 +26,12 @@ namespace MVVMCalculator.Model
 
         public void Save()
         {
-            XML.XMLFileManager.WriteXml<List<Function>>(@"./FunctionData.xml", Collections);
+            XML.XMLFileManager.WriteXml<List<Function>>("FunctionData.xml", Collections);
         }
 
         private void Load()
         {
-            Collections = new List<Function>
-            {
-                new Function(8, 2, Calculator.Type.Add),
-                new Function(8, 2, Calculator.Type.Sub),
-                new Function(8, 2, Calculator.Type.Mul),
-                new Function(8, 2, Calculator.Type.Add),
-                new Function(8, 2, Calculator.Type.Sub),
-                new Function(8, 2, Calculator.Type.Mul),
-                new Function(8, 2, Calculator.Type.Div)
-            };
+            Collections = XML.XMLFileManager.ReadXml<List<Function>>("FunctionData.xml");
         }
     }
 }
