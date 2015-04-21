@@ -1,5 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using MVVMCalculator.Model;
+using System;
+using System.Windows.Input;
 
 namespace MVVMCalculator.ViewModel
 {
@@ -33,9 +36,41 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        public FunctionDetailViewModel(Function function)
+        #region private variable
+
+        private Action removeFunctionAction;
+
+    	#endregion
+
+        #region コンストラクタ
+
+        public FunctionDetailViewModel(Function function, Action removeFunctionAction)
         {
             FunctionViewModel = new FunctionViewModel(function);
+            this.removeFunctionAction = removeFunctionAction;
         }
+
+        #endregion
+
+        #region コマンド
+
+        #region RemoveFunctionCommand
+
+        private ICommand _RemoveFunctionCommand;
+        public ICommand RemoveFunctionCommand
+        {
+            get
+            {
+                if (_RemoveFunctionCommand == null)
+                {
+                    _RemoveFunctionCommand = new RelayCommand(removeFunctionAction);
+                }
+                return _RemoveFunctionCommand;
+            }
+        }
+
+        #endregion
+
+        #endregion
     }
 }

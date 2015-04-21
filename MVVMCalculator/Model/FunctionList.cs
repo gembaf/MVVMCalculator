@@ -54,6 +54,11 @@ namespace MVVMCalculator.Model
             Collections.Add(func);
         }
 
+        public void Remove(Function func)
+        {
+            Collections.Remove(func);
+        }
+
         #endregion
 
         #region private method

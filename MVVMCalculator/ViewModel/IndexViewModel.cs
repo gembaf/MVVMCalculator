@@ -44,10 +44,16 @@ namespace MVVMCalculator.ViewModel
                 if (_SelectedFunction != value)
                 {
                     _SelectedFunction = value;
-                    FunctionDetail = new FunctionDetailViewModel(_SelectedFunction);
+                    FunctionDetail = new FunctionDetailViewModel(_SelectedFunction, () => RemoveFunctionAction(_SelectedFunction));
                     RaisePropertyChanged("SelectedFunction");
                 }
             }
+        }
+
+        private void RemoveFunctionAction(Function function)
+        {
+            FunctionList.Remove(function);
+            FunctionDetail = null;
         }
 
         #endregion
