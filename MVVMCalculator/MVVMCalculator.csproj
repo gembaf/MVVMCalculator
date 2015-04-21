@@ -68,13 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Design\DesignDataService.cs" />
     <Compile Include="Model\Calculator.cs" />
-    <Compile Include="Model\DataItem.cs" />
-    <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\Function.cs" />
     <Compile Include="Model\FunctionList.cs" />
-    <Compile Include="Model\IDataService.cs" />
     <Compile Include="Model\XML\XMLFileManager.cs" />
     <Compile Include="ViewModel\CalculateTypeViewModel.cs" />
     <Compile Include="ViewModel\CalculatorViewModel.cs" />
@@ -83,6 +79,7 @@
     <Compile Include="ViewModel\FunctionViewModel.cs" />
     <Compile Include="ViewModel\IndexViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SortFunctionDialogViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\Behavior\MvvmDialogBehavior.cs" />
     <Compile Include="View\CalculatorPage.xaml.cs">
@@ -90,6 +87,9 @@
     </Compile>
     <Compile Include="View\FunctionDetail.xaml.cs">
       <DependentUpon>FunctionDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SortFunctionDialog.xaml.cs">
+      <DependentUpon>SortFunctionDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FunctionDialog.xaml.cs">
       <DependentUpon>FunctionDialog.xaml</DependentUpon>
@@ -116,6 +116,10 @@
     <Page Include="View\FunctionDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SortFunctionDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\FunctionDialog.xaml">
       <SubType>Designer</SubType>

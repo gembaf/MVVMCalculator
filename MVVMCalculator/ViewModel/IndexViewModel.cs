@@ -58,18 +58,36 @@ namespace MVVMCalculator.ViewModel
 
         #endregion
 
-        #region FunctionDialogViewModel Dialog
+        #region FunctionDialogViewModel FunctionDialog
 
-        private FunctionDialogViewModel _Dialog;
-        public FunctionDialogViewModel Dialog
+        private FunctionDialogViewModel _FunctionDialog;
+        public FunctionDialogViewModel FunctionDialog
         {
-            get { return _Dialog; }
+            get { return _FunctionDialog; }
             set
             {
-                if (_Dialog != value)
+                if (_FunctionDialog != value)
                 {
-                    _Dialog = value;
-                    RaisePropertyChanged("Dialog");
+                    _FunctionDialog = value;
+                    RaisePropertyChanged("FunctionDialog");
+                }
+            }
+        }
+
+        #endregion
+
+        #region SortFunctionDialogViewModel SortFunctionDialog
+
+        private SortFunctionDialogViewModel _SortFunctionDialog;
+        public SortFunctionDialogViewModel SortFunctionDialog
+        {
+            get { return _SortFunctionDialog; }
+            set
+            {
+                if (_SortFunctionDialog != value)
+                {
+                    _SortFunctionDialog = value;
+                    RaisePropertyChanged("SortFunctionDialog");
                 }
             }
         }
@@ -107,27 +125,46 @@ namespace MVVMCalculator.ViewModel
         
         #region コマンド
 
-        #region OpenDialogCommand
+        #region OpenFunctionDialogCommand
 
-        private ICommand _OpenDialogCommand;
-        public ICommand OpenDialogCommand
+        private ICommand _OpenFunctionDialogCommand;
+        public ICommand OpenFunctionDialogCommand
         {
             get
             {
-                if (_OpenDialogCommand == null)
+                if (_OpenFunctionDialogCommand == null)
                 {
-                    _OpenDialogCommand = new RelayCommand(
-                        () => Dialog = new FunctionDialogViewModel(CloseDialogAction)
+                    _OpenFunctionDialogCommand = new RelayCommand(
+                        () => FunctionDialog = new FunctionDialogViewModel(CloseFunctionDialogAction)
                     );
                 }
-                return _OpenDialogCommand;
+                return _OpenFunctionDialogCommand;
             }
         }
 
-        private void CloseDialogAction()
+        private void CloseFunctionDialogAction()
         {
-            FunctionList.Add(Dialog.FunctionViewModel.Instance);
-            Dialog = null;
+            FunctionList.Add(FunctionDialog.FunctionViewModel.Instance);
+            FunctionDialog = null;
+        }
+
+        #endregion
+
+        #region OpenSortFunctionDialogCommand
+
+        private ICommand _OpenSortFunctionDialogCommand;
+        public ICommand OpenSortFunctionDialogCommand
+        {
+            get
+            {
+                if (_OpenSortFunctionDialogCommand == null)
+                {
+                    _OpenSortFunctionDialogCommand = new RelayCommand(
+                        () => SortFunctionDialog = new SortFunctionDialogViewModel(() => SortFunctionDialog = null)
+                    );
+                }
+                return _OpenSortFunctionDialogCommand;
+            }
         }
 
         #endregion

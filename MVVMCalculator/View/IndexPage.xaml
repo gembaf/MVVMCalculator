@@ -12,7 +12,8 @@
              Background="White">
 
     <i:Interaction.Behaviors>
-        <mvvmdialogbehavior:DialogBehavior Content="{Binding Dialog}" />
+        <mvvmdialogbehavior:DialogBehavior Content="{Binding FunctionDialog}" />
+        <mvvmdialogbehavior:DialogBehavior Content="{Binding SortFunctionDialog}" />
     </i:Interaction.Behaviors>
 
     <Grid Margin="10">
@@ -23,10 +24,21 @@
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
 
-        <Button Content="計算式の追加"
-                Command="{Binding OpenDialogCommand}"
-                Grid.Row="0"
-                Width="150"/>
+        <Grid Grid.Row="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="計算式の追加"
+                    Command="{Binding OpenFunctionDialogCommand}"
+                    Grid.Column="0"/>
+            <Button Content="絞り込み"
+                    Command="{Binding OpenSortFunctionDialogCommand}"
+                    Grid.Column="1"/>
+        </Grid>
+
         <ListBox ItemsSource="{Binding FunctionList.Collections}"
                  SelectedItem="{Binding SelectedFunction}"
                  Grid.Row="1"

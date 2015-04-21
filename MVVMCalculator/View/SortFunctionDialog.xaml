@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MVVMCalculator.View.SortFunctionDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mvvmdialogbehavior="clr-namespace:MvvmDialogBehavior"
+             mc:Ignorable="d"
+             Background="White"
+             d:DesignHeight="200" d:DesignWidth="200"
+             MinWidth="200" MinHeight="200">
+
+    <i:Interaction.Behaviors>
+        <mvvmdialogbehavior:WindowStyleBehavior>
+            <mvvmdialogbehavior:WindowStyleBehavior.Style>
+                <Style TargetType="Window">
+                    <Setter Property="Title" Value="絞り込み" />
+                    <Setter Property="SizeToContent" Value="WidthAndHeight" />
+                </Style>
+            </mvvmdialogbehavior:WindowStyleBehavior.Style>
+        </mvvmdialogbehavior:WindowStyleBehavior>
+    </i:Interaction.Behaviors>
+
+    <Grid Margin="10">
+
+    </Grid>
+</UserControl>
