@@ -22,6 +22,33 @@
     </i:Interaction.Behaviors>
 
     <Grid Margin="10">
+        <ListView ItemsSource="{Binding CalculateTypes}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightGreen" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ListViewItem Padding="10">
+                        <CheckBox Content="{Binding Label}" />
+                    </ListViewItem>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
     </Grid>
 </UserControl>
