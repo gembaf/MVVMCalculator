@@ -24,6 +24,9 @@
             <DataTemplate DataType="{x:Type localvm:FunctionDialogViewModel}">
                 <localview:FunctionDialog />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type localvm:FunctionDetailViewModel}">
+                <localview:FunctionDetail />
+            </DataTemplate>
 
             <!--SkinとThemeの適用-->
             <ResourceDictionary.MergedDictionaries>

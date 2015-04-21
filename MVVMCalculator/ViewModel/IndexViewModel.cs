@@ -44,6 +44,7 @@ namespace MVVMCalculator.ViewModel
                 if (_SelectedFunction != value)
                 {
                     _SelectedFunction = value;
+                    FunctionDetail = new FunctionDetailViewModel(_SelectedFunction);
                     RaisePropertyChanged("SelectedFunction");
                 }
             }
@@ -63,6 +64,24 @@ namespace MVVMCalculator.ViewModel
                 {
                     _Dialog = value;
                     RaisePropertyChanged("Dialog");
+                }
+            }
+        }
+
+        #endregion
+
+        #region FunctionDetailViewModel FunctionDetail
+
+        private FunctionDetailViewModel _FunctionDetail;
+        public FunctionDetailViewModel FunctionDetail
+        {
+            get { return _FunctionDetail; }
+            set
+            {
+                if (_FunctionDetail != value)
+                {
+                    _FunctionDetail = value;
+                    RaisePropertyChanged("FunctionDetail");
                 }
             }
         }

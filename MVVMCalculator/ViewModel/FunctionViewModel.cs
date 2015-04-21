@@ -102,6 +102,21 @@ namespace MVVMCalculator.ViewModel
         public FunctionViewModel()
         {
             function = new Function();
+            SetProperty();
+        }
+
+        public FunctionViewModel(Function function)
+        {
+            this.function = function;
+            SetProperty();
+        }
+
+        #endregion
+
+        #region private method
+
+        private void SetProperty()
+        {
             CalculateTypes = CalculateTypeViewModel.Create();
             SelectedCalculateType = CalculateTypes.First();
         }

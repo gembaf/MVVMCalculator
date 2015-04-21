@@ -31,7 +31,8 @@ namespace MVVMCalculator.Model
 
         #region コンストラクタ Singleton
 
-        private FunctionList() {
+        private FunctionList()
+        {
             Load();
         }
 
