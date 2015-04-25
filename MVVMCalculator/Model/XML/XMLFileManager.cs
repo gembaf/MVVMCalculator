@@ -7,12 +7,21 @@ namespace MVVMCalculator.Model.XML
     {
         #region public static method
 
-        public static T ReadXml<T>(string filePath)
+        public static T ReadXml<T>(string filePath) where T : new()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
-            StreamReader stream = new StreamReader(filePath);
-            T obj = (T)serializer.Deserialize(stream);
-            stream.Close();
+            StreamReader stream;
+            T obj;
+            try
+            {
+                stream = new StreamReader(filePath);
+                obj = (T)serializer.Deserialize(stream);
+                stream.Close();
+            }
+            catch (System.Exception)
+            {
+                obj = new T();
+            }
             return obj;
         }
 
